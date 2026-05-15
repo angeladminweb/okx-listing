@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390, initial-scale=1.0">
+<title>OKX May 2026 — New Listings</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #000;
+  --card: #111;
+  --border: #1e1e1e;
+  --border2: #2a2a2a;
+  --blue: #3B82F6;
+  --blue-dim: rgba(59,130,246,0.1);
+  --green: #22c55e;
+  --red: #ef4444;
+  --muted: #555;
+  --sub: #333;
+  --text: #f0f0f0;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  width: 390px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background-image: radial-gradient(rgba(59,130,246,0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events:none; z-index:0;
+}
+
+.page { position:relative; z-index:1; padding:14px 12px 32px; }
+
+/* ── HEADER ── */
+.header { display:flex; align-items:center; justify-content:space-between; margin-bottom:13px; }
+
+.logo-row { display:flex; align-items:center; gap:10px; }
+
+/* OKX logo circle */
+.okx-circle {
+  width: 44px; height: 44px;
+  background: #000;
+  border: 2px solid #2a2a2a;
+  border-radius: 50%;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+  box-shadow: 0 0 0 1px #111, 0 2px 10px rgba(0,0,0,.5);
+}
+.okx-circle svg { width:30px; height:30px; }
+
+.hd-title { font-family:'Space Mono',monospace; font-size:13px; font-weight:700; line-height:1.2; }
+.hd-sub { font-size:9.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; margin-top:1px; }
+
+.date-pill {
+  font-family:'Space Mono',monospace;
+  font-size:9px; color:var(--blue);
+  background:var(--blue-dim);
+  border:1px solid rgba(59,130,246,.3);
+  border-radius:7px;
+  padding:5px 9px; line-height:1.5; text-align:center;
+  flex-shrink:0;
+}
+
+/* ── STATS ── */
+.stats { display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:14px; }
+.stat {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:10px; padding:10px 0; text-align:center;
+}
+.stat-n { font-family:'Space Mono',monospace; font-size:21px; font-weight:700; line-height:1; }
+.stat-l { font-size:9px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-top:3px; }
+
+/* ── SECTION ── */
+.sec { display:flex; align-items:center; gap:7px; margin:14px 0 0; }
+.dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.sec-name { font-family:'Space Mono',monospace; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); flex:1; }
+.sec-ct { font-family:'Space Mono',monospace; font-size:9px; color:var(--sub); }
+
+/* ── HINT BAR ── */
+.hintbar {
+  margin-top:5px;
+  background:rgba(59,130,246,.07);
+  border:1px solid rgba(59,130,246,.2);
+  border-bottom:none;
+  border-radius:9px 9px 0 0;
+  padding:5px 10px;
+  font-size:9.5px; color:#5a88e0;
+  display:flex; align-items:center; gap:5px; letter-spacing:.01em;
+}
+
+/* ── TABLE WRAPPER ── */
+.tbl-wrap {
+  border:1px solid var(--border2);
+  border-top:none;
+  border-radius:0 0 10px 10px;
+  overflow:hidden;
+  background:var(--card);
+}
+table { width:100%; border-collapse:collapse; }
+thead tr { background:#090909; }
+th {
+  font-family:'Space Mono',monospace;
+  font-size:7.5px; color:var(--muted);
+  text-transform:uppercase; letter-spacing:.08em;
+  padding:6px 7px; text-align:left; font-weight:400;
+  border-bottom:1px solid var(--border2);
+}
+th.r { text-align:right; }
+tbody tr { border-bottom:1px solid var(--border); }
+tbody tr:last-child { border-bottom:none; }
+td { padding:8px 7px; vertical-align:middle; }
+
+/* asset cell */
+.ac { display:flex; align-items:center; gap:7px; }
+.av {
+  width:30px; height:30px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Space Mono',monospace; font-size:7px; font-weight:700;
+  color:#fff; flex-shrink:0; letter-spacing:-.5px;
+}
+.aname { font-family:'Space Mono',monospace; font-size:11.5px; font-weight:700; line-height:1; }
+.asub { font-size:9px; color:var(--muted); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:88px; }
+
+/* INFO button */
+.ibtn {
+  display:inline-flex; align-items:center; gap:2px;
+  background:rgba(59,130,246,.13);
+  border:1px solid rgba(59,130,246,.38);
+  border-radius:4px; padding:2px 5px;
+  font-size:8px; color:var(--blue);
+  cursor:pointer; white-space:nowrap;
+  transition:background .15s;
+  user-select:none;
+}
+.ibtn:active { background:rgba(59,130,246,.25); }
+
+.dt { font-family:'Space Mono',monospace; font-size:9.5px; color:var(--muted); white-space:nowrap; }
+.pr { font-family:'Space Mono',monospace; font-size:11px; text-align:right; white-space:nowrap; }
+.ch { font-family:'Space Mono',monospace; font-size:10px; font-weight:700; text-align:right; white-space:nowrap; }
+.up { color:var(--green); }
+.dn { color:var(--red); }
+
+/* ── MODAL ── */
+.overlay {
+  display:none; position:fixed; inset:0; z-index:200;
+  background:rgba(0,0,0,.8); backdrop-filter:blur(4px);
+  align-items:flex-end; justify-content:center;
+}
+.overlay.open { display:flex; }
+.modal {
+  background:#0c1426;
+  border:1px solid #1e3060;
+  border-radius:20px 20px 0 0;
+  padding:22px 18px 36px;
+  width:100%; max-width:390px;
+  position:relative;
+  animation:up .2s ease;
+}
+@keyframes up { from{transform:translateY(50px);opacity:0} to{transform:translateY(0);opacity:1} }
+
+.mclose {
+  position:absolute; top:14px; right:14px;
+  width:30px; height:30px;
+  background:#162040; border:1px solid #2a3a60;
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  cursor:pointer; font-size:15px; color:#7a8aaa;
+}
+.mticker { font-family:'Space Mono',monospace; font-size:15px; font-weight:700; color:var(--blue); margin-bottom:2px; }
+.mfull { font-size:11px; color:#6a7a9a; margin-bottom:12px; }
+.mdiv { height:1px; background:#1a2e50; margin-bottom:12px; }
+.mbody { font-size:12px; color:#bcc8e0; line-height:1.7; }
+
+/* ── MOVERS ── */
+.movers-wrap { margin-top:14px; }
+.movers-row { display:flex; gap:5px; flex-wrap:wrap; margin-top:6px; }
+.chip {
+  display:flex; align-items:center; gap:4px;
+  background:var(--card); border:1px solid var(--border);
+  border-radius:6px; padding:5px 8px;
+  font-family:'Space Mono',monospace; font-size:9px;
+}
+.chip.g { border-color:rgba(34,197,94,.3); }
+.chip.r { border-color:rgba(239,68,68,.3); }
+
+.footer { text-align:center; margin-top:18px; font-size:8px; color:var(--sub); font-family:'Space Mono',monospace; letter-spacing:.08em; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-row">
+    <div class="okx-circle">
+      <!-- Accurate OKX pixel logo: 5 squares in cross/checker pattern -->
+      <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Top-left square -->
+        <rect x="1" y="1" width="11" height="11" rx="2" fill="white"/>
+        <!-- Top-right square -->
+        <rect x="18" y="1" width="11" height="11" rx="2" fill="white"/>
+        <!-- Center square -->
+        <rect x="9.5" y="9.5" width="11" height="11" rx="2" fill="white"/>
+        <!-- Bottom-left square -->
+        <rect x="1" y="18" width="11" height="11" rx="2" fill="white"/>
+        <!-- Bottom-right square -->
+        <rect x="18" y="18" width="11" height="11" rx="2" fill="white"/>
+      </svg>
+    </div>
+    <div>
+      <div class="hd-title">OKX New Listings</div>
+      <div class="hd-sub">May 2026 · 17 Assets</div>
+    </div>
+  </div>
+  <div class="date-pill">As of<br>May 15, 2026</div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-n">17</div><div class="stat-l">Assets</div></div>
+  <div class="stat"><div class="stat-n" style="color:var(--green)">+36%</div><div class="stat-l">Top Mover</div></div>
+  <div class="stat"><div class="stat-n">4</div><div class="stat-l">Categories</div></div>
+</div>
+
+<!-- ══════════════════════════════
+     SPOT CRYPTO
+══════════════════════════════ -->
+<div class="sec">
+  <div class="dot" style="background:#3B82F6"></div>
+  <div class="sec-name">Spot Crypto</div>
+  <div class="sec-ct">2 coins</div>
+</div>
+<div class="hintbar">👆 Tap <strong style="color:#7aaaff;margin:0 2px">[INFO]</strong> on each row for full details</div>
+<div class="tbl-wrap"><table>
+  <thead><tr><th style="width:52%">Asset</th><th>Listed</th><th class="r">Price</th><th class="r">24h</th></tr></thead>
+  <tbody>
+  <tr><td><div class="ac">
+    <div class="av" style="background:#3B82F6">PR</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">PROS</div>
+        <span class="ibtn" onclick="openModal('PROS','Pharos Network','Financial-grade Layer 1 blockchain combining modular architecture, dual VM (EVM + WASM), and built-in compliance tools. Designed to host tokenized real-world assets alongside DeFi. Listed on Upbit & Bithumb in early May 2026, briefly spiking ~45% on debut.')">INFO ▸</span>
+      </div>
+      <div class="asub">Pharos Network · L1</div>
+    </div>
+  </div></td>
+  <td class="dt">May 5</td><td class="pr">$0.79</td><td class="ch up">+4.1%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#6366f1">ED</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">EDGE</div>
+        <span class="ibtn" onclick="openModal('EDGE','edgeX','High-performance perpetual DEX on an Arbitrum-based L2. Runs an off-chain order book with on-chain settlement, targeting sub-10ms execution. Beyond crypto perpetuals, edgeX expanded into US stock perpetuals and prediction markets. Incubated by Amber Group, backed by Circle Ventures. TGE: March 31, 2026.')">INFO ▸</span>
+      </div>
+      <div class="asub">edgeX · Perp DEX</div>
+    </div>
+  </div></td>
+  <td class="dt">May 8</td><td class="pr">$1.37</td><td class="ch up">+0.7%</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ══════════════════════════════
+     SWAP CRYPTO
+══════════════════════════════ -->
+<div class="sec">
+  <div class="dot" style="background:#a855f7"></div>
+  <div class="sec-name">Swap · Crypto</div>
+  <div class="sec-ct">1 coin</div>
+</div>
+<div class="hintbar">👆 Tap <strong style="color:#7aaaff;margin:0 2px">[INFO]</strong> on each row for full details</div>
+<div class="tbl-wrap"><table>
+  <thead><tr><th style="width:52%">Asset</th><th>Listed</th><th class="r">Price</th><th class="r">24h</th></tr></thead>
+  <tbody>
+  <tr><td><div class="ac">
+    <div class="av" style="background:#a855f7">BI</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">BILL</div>
+        <span class="ibtn" onclick="openModal('BILL','Billions Network','Mobile-first, privacy-preserving alternative to Worldcoin in the AI identity space. Users verify identity using a government-issued ID on their phone and can prove attributes like &quot;I am human&quot; without revealing personal data, using zero-knowledge proofs. Backed by Coinbase Ventures and Polychain. TGE was May 4 — listed on 8 major exchanges within days. Note: the project faced controversy over a last-minute vesting change that affected presale investors.')">INFO ▸</span>
+      </div>
+      <div class="asub">Billions Network · ZK ID</div>
+    </div>
+  </div></td>
+  <td class="dt">May 4</td><td class="pr">$0.233</td><td class="ch up">🔥 +36%</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ══════════════════════════════
+     SWAP US STOCKS
+══════════════════════════════ -->
+<div class="sec">
+  <div class="dot" style="background:#f97316"></div>
+  <div class="sec-name">Swap · US Stocks</div>
+  <div class="sec-ct">9 assets</div>
+</div>
+<div class="hintbar">👆 Tap <strong style="color:#7aaaff;margin:0 2px">[INFO]</strong> on each row for full details</div>
+<div class="tbl-wrap"><table>
+  <thead><tr><th style="width:52%">Asset</th><th>Listed</th><th class="r">Price</th><th class="r">24h</th></tr></thead>
+  <tbody>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#f97316">CB</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">CBRS</div>
+        <span class="ibtn" onclick="openModal('CBRS','Cerebras Systems','AI chipmaker designing processors specifically for AI training and inference, competing directly with Nvidia. Had its Nasdaq IPO on May 14, opening at $350 and closing up 68%, raising $5.55B — the largest US tech IPO since Uber in 2019. Customers include OpenAI, Amazon, and Meta.')">INFO ▸</span>
+      </div>
+      <div class="asub">Cerebras · AI Chips</div>
+    </div>
+  </div></td>
+  <td class="dt">May 14</td><td class="pr">$323</td><td class="ch up">+1.3%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#0ea5e9">CO</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">COHR</div>
+        <span class="ibtn" onclick="openModal('COHR','Coherent Corp.','Develops optical transceivers that convert GPU electrical signals into light for high-speed fiber transmission — a key picks-and-shovels play in AI infrastructure. Also covers engineered materials, optoelectronics, and laser systems. Formed from the 2022 merger of II-VI and Coherent Inc.')">INFO ▸</span>
+      </div>
+      <div class="asub">Coherent · Photonics</div>
+    </div>
+  </div></td>
+  <td class="dt">May 9</td><td class="pr">$388</td><td class="ch dn">-4.6%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#64748b">WD</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">WDC</div>
+        <span class="ibtn" onclick="openModal('WDC','Western Digital','Repositioned as an AI-era storage infrastructure partner — 90% of revenue now driven by AI and cloud. HDDs remain ~7× cheaper per GB than SSDs, making them the default choice for massive AI training datasets. Stock is up ~170% YTD in 2026.')">INFO ▸</span>
+      </div>
+      <div class="asub">Western Digital · Storage</div>
+    </div>
+  </div></td>
+  <td class="dt">May 9</td><td class="pr">$480</td><td class="ch dn">-2.2%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#8b5cf6">MV</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">MRVL</div>
+        <span class="ibtn" onclick="openModal('MRVL','Marvell Technology','Semiconductor company focused on data infrastructure for cloud data centers, enterprise networking, automotive, and carrier markets. Known for custom AI ASICs built for hyperscalers like Google and Amazon.')">INFO ▸</span>
+      </div>
+      <div class="asub">Marvell · AI ASICs</div>
+    </div>
+  </div></td>
+  <td class="dt">May 9</td><td class="pr">$175</td><td class="ch dn">-6.8%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#ef4444">RL</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">RKLB</div>
+        <span class="ibtn" onclick="openModal('RKLB','Rocket Lab','Space company offering launch services, spacecraft design, optical systems, and on-orbit management. Posted record Q1 2026 revenue of $200M (+63.5% YoY), with a $2.2B contract backlog. Medium-lift Neutron rocket targeting debut in late 2026.')">INFO ▸</span>
+      </div>
+      <div class="asub">Rocket Lab · Space</div>
+    </div>
+  </div></td>
+  <td class="dt">May 9</td><td class="pr">$128</td><td class="ch up">+2.6%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#374151">SH</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">SHLD</div>
+        <span class="ibtn" onclick="openModal('SHLD','Shield AI','Aerospace & defense tech developing AI-powered autonomous fighter pilots and drones. Clients: US SOCOM, Air Force, Marine Corps, Navy, and international militaries. Raised $1.5B Series G at $12.7B valuation in March 2026 after Hivemind autonomy software was selected for the USAF drone fighter program.')">INFO ▸</span>
+      </div>
+      <div class="asub">Shield AI · Defense</div>
+    </div>
+  </div></td>
+  <td class="dt">May 9</td><td class="pr">$64</td><td class="ch dn">-0.5%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#16a34a">GM</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">GME</div>
+        <span class="ibtn" onclick="openModal('GME','GameStop','No longer just a video game retailer. Ryan Cohen transformed it into a holding company — board approved investing excess cash in public equities, private equity, and crypto. Holds ~$8.83B in cash and securities. Main growth segment is now collectibles: trading cards and toys.')">INFO ▸</span>
+      </div>
+      <div class="asub">GameStop · Holdings</div>
+    </div>
+  </div></td>
+  <td class="dt">May 9</td><td class="pr">$21.6</td><td class="ch dn">-3.5%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#7c3aed">LT</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">LITE</div>
+        <span class="ibtn" onclick="openModal('LITE','Lumentum Holdings','Global leader in optical and photonic technologies powering AI, cloud computing, and next-gen communications. Up 166% YTD in 2026. Fiscal Q2 revenue: $665.5M (+66% YoY), backed by a $400M+ Optical Circuit Switch backlog. Spun off from JDS Uniphase in 2015.')">INFO ▸</span>
+      </div>
+      <div class="asub">Lumentum · Photonics</div>
+    </div>
+  </div></td>
+  <td class="dt">May 9</td><td class="pr">$960</td><td class="ch dn">-6.7%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#0f766e">DR</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">DRAM</div>
+        <span class="ibtn" onclick="openModal('DRAM','Roundhill Memory ETF','The first-ever ETF dedicated solely to global memory chip companies — covering HBM, NAND, and DRAM producers. Top holdings: Samsung, SK Hynix, and Micron. Launched April 2, 2026 and became the fastest-growing ETF in history, surpassing $6.5B AUM in record time.')">INFO ▸</span>
+      </div>
+      <div class="asub">Memory ETF · Chips</div>
+    </div>
+  </div></td>
+  <td class="dt">May 9</td><td class="pr">$51</td><td class="ch dn">-5.6%</td></tr>
+
+  </tbody>
+</table></div>
+
+<!-- ══════════════════════════════
+     SWAP ETFs
+══════════════════════════════ -->
+<div class="sec">
+  <div class="dot" style="background:#f59e0b"></div>
+  <div class="sec-name">Swap · ETFs</div>
+  <div class="sec-ct">2 assets</div>
+</div>
+<div class="hintbar">👆 Tap <strong style="color:#7aaaff;margin:0 2px">[INFO]</strong> on each row for full details</div>
+<div class="tbl-wrap"><table>
+  <thead><tr><th style="width:52%">Asset</th><th>Listed</th><th class="r">Price</th><th class="r">24h</th></tr></thead>
+  <tbody>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#b45309">XL</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">XLE</div>
+        <span class="ibtn" onclick="openModal('XLE','Energy Select Sector SPDR','State Street flagship energy ETF (est. 1998), tracking all energy companies in the S&amp;P 500 — ExxonMobil, Chevron, ConocoPhillips, etc. The go-to instrument for broad US energy sector exposure.')">INFO ▸</span>
+      </div>
+      <div class="asub">Energy SPDR · S&amp;P 500</div>
+    </div>
+  </div></td>
+  <td class="dt">May 12</td><td class="pr">$58.5</td><td class="ch up">+1.8%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#78350f">US</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname">USO</div>
+        <span class="ibtn" onclick="openModal('USO','United States Oil Fund','Crude oil ETF (launched 2006) tracking front-month light sweet crude oil futures. Unlike XLE (equity-based), USO directly mirrors crude oil price movements via futures contracts — pure oil price exposure without equity risk.')">INFO ▸</span>
+      </div>
+      <div class="asub">US Oil Fund · Futures</div>
+    </div>
+  </div></td>
+  <td class="dt">May 12</td><td class="pr">$147</td><td class="ch up">+3.6%</td></tr>
+
+  </tbody>
+</table></div>
+
+<!-- ══════════════════════════════
+     UNICORN STARTUPS
+══════════════════════════════ -->
+<div class="sec">
+  <div class="dot" style="background:#ef4444"></div>
+  <div class="sec-name">Swap · Unicorn Startups</div>
+  <div class="sec-ct">3 assets</div>
+</div>
+<div class="hintbar">👆 Tap <strong style="color:#7aaaff;margin:0 2px">[INFO]</strong> on each row for full details</div>
+<div class="tbl-wrap"><table>
+  <thead><tr><th style="width:52%">Asset</th><th>Listed</th><th class="r">Price</th><th class="r">24h</th></tr></thead>
+  <tbody>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#f59e0b;color:#000">AN</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname" style="font-size:9.5px">ANTHROPIC</div>
+        <span class="ibtn" onclick="openModal('ANTHROPIC','Anthropic','AI safety company founded 2021 by Dario Amodei and former OpenAI researchers. Builds the Claude family of models. Closed a $30B Series G at a $380B valuation in February 2026. As of May 2026, in talks to raise another $50B at ~$900B valuation — which would make it the world\'s most valuable private company. Revenue reportedly at $44B+ annualized run rate.')">INFO ▸</span>
+      </div>
+      <div class="asub">AI Safety · Claude</div>
+    </div>
+  </div></td>
+  <td class="dt">May 1</td><td class="pr">$1,542</td><td class="ch dn">-1.7%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#10b981;color:#000">OA</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname" style="font-size:10px">OPENAI</div>
+        <span class="ibtn" onclick="openModal('OPENAI','OpenAI','Latest funding round closed March 31, 2026 at an $852B post-money valuation with $122B in committed capital. ChatGPT has 900M+ weekly active users and 50M+ paid subscribers, generating $2B in revenue per month. Products span ChatGPT, DALL-E, Whisper, API, and Codex. IPO targeting late 2026 or 2027.')">INFO ▸</span>
+      </div>
+      <div class="asub">ChatGPT · $852B val.</div>
+    </div>
+  </div></td>
+  <td class="dt">May 1</td><td class="pr">$1,359</td><td class="ch up">+0.2%</td></tr>
+
+  <tr><td><div class="ac">
+    <div class="av" style="background:#3b82f6">SX</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <div class="aname" style="font-size:10px">SPACEX</div>
+        <span class="ibtn" onclick="openModal('SPACEX','SpaceX','Filed a confidential S-1 with the SEC on April 1, 2026, targeting a June IPO at $1.75–2T valuation — potentially the largest IPO in history. Holds 97% US Space Force launch market share. Starlink has 10M+ global subscribers. Absorbed xAI (Elon Musk\'s AI company) in a February 2026 all-stock deal.')">INFO ▸</span>
+      </div>
+      <div class="asub">SpaceX · Starlink + xAI</div>
+    </div>
+  </div></td>
+  <td class="dt">May 1</td><td class="pr">$2,132</td><td class="ch up">+0.8%</td></tr>
+
+  </tbody>
+</table></div>
+
+<!-- TOP MOVERS -->
+<div class="movers-wrap">
+  <div class="sec" style="margin-top:16px">
+    <div class="dot" style="background:#f59e0b"></div>
+    <div class="sec-name">Top Movers</div>
+  </div>
+  <div class="movers-row">
+    <div class="chip g"><span style="color:#f0f0f0;font-weight:700">BILL</span><span class="up">+36%</span></div>
+    <div class="chip g"><span style="color:#f0f0f0;font-weight:700">PROS</span><span class="up">+4.1%</span></div>
+    <div class="chip g"><span style="color:#f0f0f0;font-weight:700">USO</span><span class="up">+3.6%</span></div>
+    <div class="chip g"><span style="color:#f0f0f0;font-weight:700">RKLB</span><span class="up">+2.6%</span></div>
+    <div class="chip r"><span style="color:#f0f0f0;font-weight:700">MRVL</span><span class="dn">-6.8%</span></div>
+    <div class="chip r"><span style="color:#f0f0f0;font-weight:700">LITE</span><span class="dn">-6.7%</span></div>
+    <div class="chip r"><span style="color:#f0f0f0;font-weight:700">DRAM</span><span class="dn">-5.6%</span></div>
+  </div>
+</div>
+
+<div class="footer">TAP [INFO] ON ANY ROW FOR DETAILS · OKX · MAY 2026</div>
+
+</div><!-- end .page -->
+
+<!-- ══════════════════════════════
+     MODAL OVERLAY
+══════════════════════════════ -->
+<div class="overlay" id="overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="mclose" onclick="closeOverlay()">✕</div>
+    <div class="mticker" id="m-ticker"></div>
+    <div class="mfull" id="m-full"></div>
+    <div class="mdiv"></div>
+    <div class="mbody" id="m-body"></div>
+  </div>
+</div>
+
+<script>
+function openModal(ticker, fullName, info) {
+  document.getElementById('m-ticker').textContent = ticker;
+  document.getElementById('m-full').textContent = fullName;
+  document.getElementById('m-body').textContent = info;
+  document.getElementById('overlay').classList.add('open');
+}
+function closeOverlay() {
+  document.getElementById('overlay').classList.remove('open');
+}
+function closeModal(e) {
+  if (e.target === document.getElementById('overlay')) closeOverlay();
+}
+</script>
+</body>
+</html>
